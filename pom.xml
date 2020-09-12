@@ -6,6 +6,8 @@
         <module>result</module>
         <module>redis</module>
         <module>zookeeper</module>
+        <module>amqp_primordial</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

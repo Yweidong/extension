@@ -8,11 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="redis" />
         <module name="result" />
+        <module name="amqp_primordial" />
         <module name="zookeeper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="amqp_primordial" target="1.8" />
       <module name="extension" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="result" target="1.8" />
       <module name="zookeeper" target="1.8" />
@@ -20,7 +23,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="amqp_primordial" options="-parameters" />
       <module name="extension" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="result" options="-parameters" />
       <module name="zookeeper" options="-parameters" />
