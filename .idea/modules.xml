@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/amqp_primordial/amqp_primordial.iml" filepath="$PROJECT_DIR$/amqp_primordial/amqp_primordial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/amqp_springboot/amqp_springboot.iml" filepath="$PROJECT_DIR$/amqp_springboot/amqp_springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/extension.iml" filepath="$PROJECT_DIR$/extension.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/result/result.iml" filepath="$PROJECT_DIR$/result/result.iml" />

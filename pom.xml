@@ -7,6 +7,7 @@
         <module>redis</module>
         <module>zookeeper</module>
         <module>amqp_primordial</module>
+        <module>amqp_springboot</module>
 
     </modules>
     <parent>
