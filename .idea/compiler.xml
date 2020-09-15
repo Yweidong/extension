@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="redis" />
+        <module name="zookeeper_lock" />
         <module name="redisson" />
         <module name="amqp_spring" />
         <module name="amqp_primordial" />
@@ -24,6 +25,7 @@
       <module name="redisson" target="1.8" />
       <module name="result" target="1.8" />
       <module name="zookeeper" target="1.8" />
+      <module name="zookeeper_lock" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -37,6 +39,7 @@
       <module name="redisson" options="-parameters" />
       <module name="result" options="-parameters" />
       <module name="zookeeper" options="-parameters" />
+      <module name="zookeeper_lock" options="-parameters" />
     </option>
   </component>
 </project>

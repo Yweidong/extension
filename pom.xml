@@ -7,9 +7,10 @@
         <module>redis</module>
         <module>zookeeper</module>
         <module>amqp_primordial</module>
-        <module>amqp_springboot</module>
+
         <module>redisson</module>
         <module>amqp_spring</module>
+        <module>zookeeper_lock</module>
 
     </modules>
     <parent>

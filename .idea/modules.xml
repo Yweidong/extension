@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/redisson/redisson.iml" filepath="$PROJECT_DIR$/redisson/redisson.iml" />
       <module fileurl="file://$PROJECT_DIR$/result/result.iml" filepath="$PROJECT_DIR$/result/result.iml" />
       <module fileurl="file://$PROJECT_DIR$/zookeeper/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper/zookeeper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper_lock/zookeeper_lock.iml" filepath="$PROJECT_DIR$/zookeeper_lock/zookeeper_lock.iml" />
     </modules>
   </component>
 </project>
