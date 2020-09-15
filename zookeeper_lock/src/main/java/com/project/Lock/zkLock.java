@@ -28,17 +28,20 @@ public class zkLock implements Lock {
     private static final ZooKeeper zkClient = new zkConfig().zkClient();
 
     private static final Logger logger = LoggerFactory.getLogger(zkLock.class);
-    private static final String path = "/LOCK";
+    private static final String path = "/LOCKS";
     //创建就计数器
     private static final CountDownLatch cdl = new CountDownLatch(1);
     //当前节点
-    private  String currectNode =null;
+    private  String currectNode ="";
+
     public zkLock() {
         try {
             if(zkClient.exists(path,false) == null) {
                 //创建锁根节点
                     zkClient.create(path,new byte[10], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             }
+
+            currectNode= zkClient.create(path + '/', "lock".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
         } catch (KeeperException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -48,12 +51,10 @@ public class zkLock implements Lock {
 
     @Override
     public void lock() {
-        boolean b = tryLock();
-        if(b) {
-            lock();
-        }else {
-            tryLock();
-        }
+      if(!tryLock()) {
+
+          lock();
+      }
     }
 
     @Override
@@ -62,17 +63,22 @@ public class zkLock implements Lock {
     }
 
 
+       private Watcher watcher = new Watcher() {
+            @Override
+            public void process(WatchedEvent watchedEvent) {
+                //监听节点是否删除
+                if (watchedEvent.getType() == Event.EventType.NodeDeleted) {
+                    cdl.countDown();//放行
+                }
+            }
+        };
+
+
 
     @Override
     public boolean tryLock() {
         try{
-            if(currectNode == null) {
-                //创建临时有序节点
 
-                String s = zkClient.create(path + '/', "lock".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
-                System.out.println(s);
-
-            }
 
             //获取所有的子节点
             List<String> children = zkClient.getChildren(path, false);
@@ -80,34 +86,19 @@ public class zkLock implements Lock {
 //            children.forEach(s -> {
 //                System.out.println(s);
 //            });
-            if(currectNode.equals(path+'/'+children.get(0))) {
-                    /**
-                     *
-                     *  当前节点就是第一个，直接返回
-                     */
-                    return true;
+            System.out.println(currectNode);
+           //获取自身节点的排名
+            int index = children.indexOf(currectNode.substring(path.length()+1));
+            if(index == 0) {
+                return true;
             }else {
-                //监听前一个节点
-                //获取当前节点的下标
-                Integer index = children.indexOf(currectNode.substring(6));
-
-                Stat stat = zkClient.exists(path + '/' + children.get(index - 1), new Watcher() {
-                    @Override
-                    public void process(WatchedEvent watchedEvent) {
-                        //监听节点是否删除
-                        if (watchedEvent.getType() == Event.EventType.NodeDeleted) {
-                            cdl.countDown();//放行
-                        }
-                    }
-                });
+                Stat stat = zkClient.exists(path + '/' + children.get(index - 1), watcher);
                 if(stat == null) {
-                    currectNode = children.get(index);
-                    return true;
+                    tryLock();//监听到前一个节点已经删除，继续执行下一个节点
                 }else {
-                    cdl.await();//阻塞
-                    return false;
+                    cdl.await();//前一个节点未删除，造成阻塞
+                    tryLock();
                 }
-
             }
 
 
@@ -129,7 +120,7 @@ public class zkLock implements Lock {
     @Override
     public void unlock() {
         try {
-            zkClient.delete(path+'/'+currectNode,-1);
+            zkClient.delete(currectNode,-1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (KeeperException e) {
