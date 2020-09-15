@@ -51,10 +51,7 @@ public class zkLock implements Lock {
 
     @Override
     public void lock() {
-      if(!tryLock()) {
-
-          lock();
-      }
+      tryLock();
     }
 
     @Override
