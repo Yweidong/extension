@@ -8,6 +8,8 @@
         <module>zookeeper</module>
         <module>amqp_primordial</module>
         <module>amqp_springboot</module>
+        <module>redisson</module>
+        <module>amqp_spring</module>
 
     </modules>
     <parent>
@@ -41,7 +43,12 @@
             <artifactId>zookeeper</artifactId>
             <version>3.6.2</version>
         </dependency>
-
+        <!--redisson  锁-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.10.4</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

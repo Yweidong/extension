@@ -7,16 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="redis" />
-        <module name="result" />
+        <module name="redisson" />
+        <module name="amqp_spring" />
         <module name="amqp_primordial" />
+        <module name="result" />
         <module name="zookeeper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="amqp_primordial" target="1.8" />
+      <module name="amqp_spring" target="1.8" />
+      <module name="amqp_springboot" target="1.8" />
       <module name="extension" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="redisson" target="1.8" />
       <module name="result" target="1.8" />
       <module name="zookeeper" target="1.8" />
     </bytecodeTargetLevel>
@@ -24,9 +29,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="amqp_primordial" options="-parameters" />
+      <module name="amqp_spring" options="-parameters" />
+      <module name="amqp_springboot" options="-parameters" />
       <module name="extension" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
       <module name="redis" options="-parameters" />
+      <module name="redisson" options="-parameters" />
       <module name="result" options="-parameters" />
       <module name="zookeeper" options="-parameters" />
     </option>

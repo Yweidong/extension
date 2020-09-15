@@ -9,6 +9,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/amqp_Primordial/pom.xml" />
+        <option value="$PROJECT_DIR$/amqp_springboot/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
       </set>
     </option>
