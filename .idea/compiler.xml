@@ -13,12 +13,14 @@
         <module name="amqp_primordial" />
         <module name="result" />
         <module name="zookeeper" />
+        <module name="auxiliary" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="amqp_primordial" target="1.8" />
       <module name="amqp_spring" target="1.8" />
       <module name="amqp_springboot" target="1.8" />
+      <module name="auxiliary" target="1.8" />
       <module name="extension" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
@@ -33,6 +35,7 @@
       <module name="amqp_primordial" options="-parameters" />
       <module name="amqp_spring" options="-parameters" />
       <module name="amqp_springboot" options="-parameters" />
+      <module name="auxiliary" options="-parameters" />
       <module name="extension" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
       <module name="redis" options="-parameters" />

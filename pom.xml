@@ -11,6 +11,7 @@
         <module>redisson</module>
         <module>amqp_spring</module>
         <module>zookeeper_lock</module>
+        <module>auxiliary</module>
 
     </modules>
     <parent>
