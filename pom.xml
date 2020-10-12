@@ -12,6 +12,7 @@
         <module>amqp_spring</module>
         <module>zookeeper_lock</module>
         <module>auxiliary</module>
+        <module>IO</module>
 
     </modules>
     <parent>

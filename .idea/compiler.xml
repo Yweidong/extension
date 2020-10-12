@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="redis" />
         <module name="zookeeper_lock" />
+        <module name="IO" />
         <module name="redisson" />
         <module name="amqp_spring" />
         <module name="amqp_primordial" />
@@ -22,6 +23,7 @@
       <module name="amqp_springboot" target="1.8" />
       <module name="auxiliary" target="1.8" />
       <module name="extension" target="1.8" />
+      <module name="IO" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="redisson" target="1.8" />
@@ -32,6 +34,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="IO" options="-parameters" />
       <module name="amqp_primordial" options="-parameters" />
       <module name="amqp_spring" options="-parameters" />
       <module name="amqp_springboot" options="-parameters" />

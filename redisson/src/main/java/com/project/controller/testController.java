@@ -34,6 +34,7 @@ public class testController {
 
             @Override
             public void run() {
+
                 RLock lock = redissonClient.getLock(_lock);//获取锁
                 lock.lock();//锁住
 

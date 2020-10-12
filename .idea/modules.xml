@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/IO/IO.iml" filepath="$PROJECT_DIR$/IO/IO.iml" />
       <module fileurl="file://$PROJECT_DIR$/amqp_primordial/amqp_primordial.iml" filepath="$PROJECT_DIR$/amqp_primordial/amqp_primordial.iml" />
       <module fileurl="file://$PROJECT_DIR$/amqp_spring/amqp_spring.iml" filepath="$PROJECT_DIR$/amqp_spring/amqp_spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/auxiliary/auxiliary.iml" filepath="$PROJECT_DIR$/auxiliary/auxiliary.iml" />

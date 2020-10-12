@@ -1,6 +1,7 @@
 package com.project.ReadWriteLock;
 
 import java.util.HashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -41,6 +42,7 @@ class MyCache{
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     //写数据
     public void put(String key,Object value) {
+
         readWriteLock.writeLock().lock();//写锁
         try {
             System.out.println(key+"写入数据"+value+"😂😘");
