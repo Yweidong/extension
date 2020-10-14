@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="redis" />
-        <module name="zookeeper_lock" />
+        <module name="zookeeper" />
         <module name="IO" />
         <module name="redisson" />
         <module name="amqp_spring" />
+        <module name="zookeeper_lock" />
         <module name="amqp_primordial" />
         <module name="result" />
-        <module name="zookeeper" />
+        <module name="netty" />
         <module name="auxiliary" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="auxiliary" target="1.8" />
       <module name="extension" target="1.8" />
       <module name="IO" target="1.8" />
+      <module name="netty" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="redisson" target="1.8" />
@@ -40,6 +42,7 @@
       <module name="amqp_springboot" options="-parameters" />
       <module name="auxiliary" options="-parameters" />
       <module name="extension" options="-parameters" />
+      <module name="netty" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="redisson" options="-parameters" />

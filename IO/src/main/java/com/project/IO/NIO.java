@@ -64,7 +64,7 @@ public class NIO {
                             //读取
                             String s = "hello word";
                             int write = socketChannel.write(ByteBuffer.wrap(s.getBytes()));
-                            
+
                             //处理完毕后，需保持连接，继续交给selector监听
                             socketChannel.register(selector,SelectionKey.OP_READ);
                         } catch (IOException e) {

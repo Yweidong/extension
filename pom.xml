@@ -13,6 +13,7 @@
         <module>zookeeper_lock</module>
         <module>auxiliary</module>
         <module>IO</module>
+        <module>netty</module>
 
     </modules>
     <parent>

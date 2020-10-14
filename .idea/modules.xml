@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/amqp_spring/amqp_spring.iml" filepath="$PROJECT_DIR$/amqp_spring/amqp_spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/auxiliary/auxiliary.iml" filepath="$PROJECT_DIR$/auxiliary/auxiliary.iml" />
       <module fileurl="file://$PROJECT_DIR$/extension.iml" filepath="$PROJECT_DIR$/extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/redisson/redisson.iml" filepath="$PROJECT_DIR$/redisson/redisson.iml" />
       <module fileurl="file://$PROJECT_DIR$/result/result.iml" filepath="$PROJECT_DIR$/result/result.iml" />

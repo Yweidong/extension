@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package com.project.protobuf;
+option optimize_for = SPEED;//加快解码的速度
+option java_package = "com.project.protobuf";
+option java_outer_classname = "DataInfo";
+
+message Student{
+  required string name = 1;
+  optional int32 id = 2;
+  optional string address = 3;
+}
+
